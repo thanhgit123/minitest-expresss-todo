@@ -1,0 +1,28 @@
+$text-color: black;
+$font-weight: bolder;
+
+.text {
+  color: $text-color;
+  font-weight: $font-weight;
+}
+
+@keyframes letter {
+  0% {
+    font-size: 30px;
+  }
+
+  50% {
+    font-size: 40px;
+  }
+
+  100% {
+    font-size: 30px;
+  }
+}
+
+@for $i from 1 through 10 {
+  .letter#{$i} {
+    animation: letter 1s infinite;
+    animation-delay: -0.1s * $i;
+  }
+}

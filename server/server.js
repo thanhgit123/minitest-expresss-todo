@@ -15,7 +15,9 @@ const data = JSON.parse(readDb);
 app.get('/api/v1/todos',async(req,res)=>{
     const {per_page} = req.query;
     const arrSlice = data.todos.slice(0, +per_page)
-    res.status(200).json(arrSlice);
+    res.status(200).json({
+        data : data.todos.length,
+        mama: arrSlice});
 });
 
 // Add new Todo with POST
